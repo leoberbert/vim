@@ -32,6 +32,10 @@ function PythonConfig()
         set tabstop=4 softtabstop=4 expandtab shiftwidth=4
 endfunction
 
+function YamlConfig()
+        set tabstop=2 softtabstop=2 expandtab shiftwidth=2 indentkeys-=0# indentkeys-=<:>
+endfunction
+
 function! SourceIfExists(file)
   if filereadable(expand(a:file))
     exe 'source' a:file
@@ -71,7 +75,7 @@ endfunction
 autocmd CursorHoldI * stopinsert
 autocmd FileType html call HtmlConfig()
 autocmd FileType python call PythonConfig()
-
+autocmd FileType yaml,yml call YamlConfig()
     augroup modelos 
         autocmd!
 
